@@ -1,0 +1,62 @@
+{
+  "name": "cube",
+  "version": "0.1.1",
+  "private": true,
+  "github": "xxx",
+  "start": "php ./www.php",
+  "author": [
+    {
+      "name": "linyang",
+      "mail": "lin2798003@sina.com"
+    },
+    {
+      "name": "yangzhuo"
+    },
+    {
+      "name": "zhangbaojun"
+    }
+  ],
+  "log": {
+    "log": "./log/cube.log",
+    "mysql": "./log/cube.mysql"
+  },
+  "international": {
+    "CN": "international/CN",
+    "EN": "international/EN"
+  },
+  "dir": {
+    "router": "router/",
+    "view": "view/",
+    "tmp": "tmp/",
+    "upload": "upload/"
+  },
+  "framework": {
+    "router": "router",
+    "session_name": "CUBE_SESSID",
+    "session_timeout": 86400,
+    "jsonp": "callback"
+  },
+  "engine": [
+    "modules/engine/RaintplEngine.php"
+  ],
+  "modules": [
+    "config/Config.php",
+    "modules/cookie/Cookie.php",
+    "modules/session/Session.php",
+    "modules/session_redis/RedisSession.php",
+    "modules/cdn/Cdn.php",
+    "modules/body/Body.php",
+    "modules/mongo/Mongo.php",
+    "modules/redis/Redis.php"
+  ],
+  "model": {
+    "mongo": "model/MongoProxy.php",
+    "redis": "model/RedisProxy.php",
+    "mysql": "model/MysqlProxy.php"
+  },
+  "router": {
+    "/mysql": "router/MysqlRouter.php",
+    "/upload": "router/UploadRouter.php",
+    "/redis_session": "router/RedisSessionRouter.php"
+  }
+}

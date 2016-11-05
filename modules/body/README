@@ -1,0 +1,4 @@
+# 该模块(插件)主要是用于代理Application->Request->body
+* $app->$req->body->content();//标准Http输入的内容 php://input
+* $app->$req->body->files_num();//Http上传的文件个数,使用<form><input type='file'/>
+* $app->$req->body->key;//获取post参数key
