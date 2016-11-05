@@ -40,7 +40,6 @@
     "modules/engine/RaintplEngine.php"
   ],
   "modules": [
-    "config/Config.php",
     "modules/cookie/Cookie.php",
     "modules/session/Session.php",
     "modules/session_redis/RedisSession.php",

@@ -42,4 +42,5 @@
 *  model - 初始化所有Proxy(但不是进行实例化)
 *  router - 初始化所有Router Mediator(但不是进行实例化)
 
-### ./www.php - 程序入口文件
+### ./www.php (the facade file of the Application)
+* Demo: ./www.php?router=http (Cube Framework Application will find the router config from the package.json)
