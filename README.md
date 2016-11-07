@@ -1,46 +1,45 @@
 # The framework named cube for the php.
 * Single Kernel Mode.
 * Author by linyang created on 2016-08.
-* Version Alpha 0.0.1.
-* 如果使用php做任务类功能,请使用linux自带的crontab -e 进行编辑,按照一定的频率进行.
+* Version Beta 1.0.0
 
-### ./com - 框架级代码(勿动)
-* /com/cube - cube框架包
-* /com/cube/core - 核心类
-* /com/cube/db - mysql orm
-* /com/cube/error - 错误类
-* /com/cube/framework - mvc框架
-* /com/cube/fs - 文件操作
-* /com/cube/http - http/https访问类
-* /com/cube/international - 国际语言包处理类
-* /com/cube/log - 日志类
-* /com/cube/middleware - 中间件处理类
-* /com/cube/utils - 工具包
-* /com/cube/view - 模板引擎基类(EchoEngine和AngularEngine是默认实现的)
+### ./com - framework dir(never change it)
+* /com/cube - cube dir
+* /com/cube/core - core classes
+* /com/cube/db - orm
+* /com/cube/error - Exception / Error
+* /com/cube/framework - observer mvc framework
+* /com/cube/fs - filesystem operate
+* /com/cube/http - http/https request
+* /com/cube/international - international
+* /com/cube/log - log
+* /com/cube/middleware - Connect MiddleWare & RouterMiddleWare
+* /com/cube/utils - tools
+* /com/cube/view - ViewEngine (EchoEngine & AngularEngine)
 
-### ./internation - 国际化语言包存储目录
+### ./internation - the dir of the international
 
-### ./log - 代码处理日志/mysql query sql 日志
+### ./log - log store dir
 
-### ./model - 框架proxy数据代理目录,主要用于数据库、文件等操作
+### ./model - Model Proxy dir
 
-### ./modules - 中间件/扩展插件
+### ./modules - middleware extesion
 
-### ./router - 路由目录,相当于mvc框架的view层
+### ./router - View Mediator RouterMiddleWare
 
-### ./tmp - 文件缓存目录
+### ./tmp - temporary dir
 
-### ./upload - 文件上传目录
+### ./upload - upload dir
 
-### ./view - 模板存储目录
+### ./view - viewEngine dir
 
-### ./package.json - 项目配置文件
-*  dir - 功能目录
-*  framework - 框架配置项
-*  engine - 需要载入的html渲染器
-*  modules - 需要载入的中间件
-*  model - 初始化所有Proxy(但不是进行实例化)
-*  router - 初始化所有Router Mediator(但不是进行实例化)
+### ./package.json - config file
+*  dir - dir config
+*  framework - core config
+*  engine - engine loaded
+*  modules - modules loaded
+*  model - proxy loaded(not instantiation)
+*  router - router loaded(not instantiation)
 
 ### ./www.php (the facade file of the Application)
 * Demo: ./www.php?router=http (Cube Framework Application will find the router config from the package.json)
