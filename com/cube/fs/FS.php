@@ -22,7 +22,7 @@ final class FS
     }
 
     /**
-     * 移动文件(只对文件有效).
+     * move the file or dir.
      * @param $source
      * @param $des
      * @return bool
@@ -41,7 +41,8 @@ final class FS
     }
 
     /**
-     * 复制文件(只对文件有效)
+     * copy the file.
+     *
      * @param $source
      * @param $des
      * @return bool
@@ -60,7 +61,8 @@ final class FS
     }
 
     /**
-     * 删除文件(只对文件有效).
+     * delete the file.
+     *
      * @param $source
      * @return bool
      */
@@ -78,7 +80,8 @@ final class FS
     }
 
     /**
-     * 创建文件.
+     * create the file.
+     *
      * @param $source
      * @param $data
      */
@@ -98,13 +101,14 @@ final class FS
     }
 
     /**
-     * 向文件中追加内容.
+     * append the content to the file.
+     *
      * @param $source
      * @param $data
      */
     public static function append($source, $data)
     {
-        if (!is_writable($source)) {
+        if (!is_file($source) || !is_writable($source)) {
             return false;
         }
         try {
@@ -118,9 +122,10 @@ final class FS
     }
 
     /**
-     * 读取文件.
+     * read the content from the fle.
+     *
      * @param $source
-     * @param $length
+     * @param $length content length
      */
     public static function read($source, $length = 0)
     {
@@ -142,7 +147,8 @@ final class FS
     }
 
     /**
-     * 获取标准上传的输入的流式内容.
+     * get the content from the normal php input.
+     *
      * @return string
      */
     public static function input()
@@ -151,12 +157,13 @@ final class FS
     }
 
     /**
-     * 将内容保存至本地.
+     * put the format php input stream into the temporary file.
+     *
      * array(
-     *      array('tmp'=>'文件名称','path'=>'缓存文件路径')
+     *      array('tmp'=>'file name','path'=>'file path name')
      * );
-     * @param null $content 文件内容
-     * @param string $key 文件名称
+     * @param null $content file content
+     * @param string $key file name
      * @return array|null
      * @throws \Exception
      */
@@ -172,13 +179,13 @@ final class FS
     }
 
     /**
-     * 将$_FILES中的上传文件进行保存.
+     * put the format upload files into the temporary files.
      * array(
-     *      array('tmp'=>'文件名称','path'=>'缓存文件路径'),
-     *      array('tmp'=>'文件名称','path'=>'缓存文件路径'),
-     *      array('tmp'=>'文件名称','path'=>'缓存文件路径')
+     *      array('tmp'=>'file name','path'=>'file path name'),
+     *      array('tmp'=>'file name','path'=>'file path name'),
+     *      array('tmp'=>'file name','path'=>'file path name')
      * );
-     * @param $options 配置项
+     * @param $options config
      * @return array|null
      */
     public static function saveUploadAsFile($options = null)

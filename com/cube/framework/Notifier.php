@@ -6,7 +6,7 @@ use com\cube\core\Application;
 
 /**
  * Created by PhpStorm.
- * 观察者核心类.
+ * Observer .
  * User: linyang
  * Date: 16/10/2
  * Time: 下午2:28
@@ -18,7 +18,7 @@ class Notifier
      */
     public static $models_array;
     /**
-     * 数据代理列表.
+     * proxys array.
      */
     private static $model;
 
@@ -33,8 +33,8 @@ class Notifier
     }
 
     /**
-     * 初始化model array.
-     * 记录所有routers
+     * initialize model array.
+     *
      * @param $value
      * @return $this
      */
@@ -47,9 +47,10 @@ class Notifier
     }
 
     /**
-     * 注册Model层代理实例.
-     * @param $name 代理实例标识(必须唯一)
-     * @param $proxy 代理实例
+     * register the proxy instance.
+     *
+     * @param $name the name of the proxy
+     * @param $proxy proxy instance
      */
     public function registerModel($name, Proxy $proxy)
     {
@@ -57,7 +58,8 @@ class Notifier
     }
 
     /**
-     * 执行数据模型代理.
+     * execute the model
+     *
      * @param $name
      * @param null $value
      * @return mixed
@@ -80,7 +82,7 @@ class Notifier
     }
 
     /**
-     * 发送消息.
+     * send the notification in the framework.
      * @param $name 消息名称
      * @param $value 消息body
      */
@@ -95,7 +97,7 @@ class Notifier
     }
 
     /**
-     * 移除所有Model层代理实例.
+     * remove all models.
      */
     public function gc()
     {

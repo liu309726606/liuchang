@@ -12,13 +12,13 @@ use com\cube\core\Application;
 
 /**
  * Class Proxy.
- * 框架数据代理层.
+ * Model Layer of the MVC.
  * @package com\cube\framework
  */
 abstract class Proxy
 {
     /**
-     * 核心框架的引用.
+     * Application Instance.
      * @var Application
      */
     protected $app;
@@ -34,7 +34,7 @@ abstract class Proxy
     }
 
     /**
-     * 获取该Proxy的唯一标识.
+     * Model unique string name.
      * @return string
      */
     public function getName()
@@ -43,7 +43,7 @@ abstract class Proxy
     }
 
     /**
-     * 该数据模型代理被执行.
+     * execute the model.
      * @param $value 携带数据
      */
     public function execute($value)
@@ -53,7 +53,7 @@ abstract class Proxy
     }
 
     /**
-     * 数据模型代理销毁.
+     * model remove
      */
     public function onRemove()
     {
@@ -61,7 +61,7 @@ abstract class Proxy
     }
 
     /**
-     * 发送消息.
+     * send the notification in the framework.
      * @param $name 消息名称
      * @param $value 消息body
      */

@@ -14,13 +14,13 @@ use com\cube\core\Response;
 
 /**
  * Class RouterMiddleWare.
- * 路由中间件.
+ * the middleware of the router connect.
  * @package com\cube\middleware
  */
 class RouterMiddleWare
 {
     /**
-     * 框架实例引用.
+     * Application Instance.
      * @var
      */
     protected $app;
@@ -51,7 +51,7 @@ class RouterMiddleWare
     }
 
     /**
-     * 中间件执行完毕.
+     * the middleware execute end.
      */
     public function end()
     {

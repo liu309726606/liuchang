@@ -18,47 +18,47 @@ use com\cube\utils\ArrayUtil;
 final class Request
 {
     /**
-     * @var 用户ip
+     * @var string user ip
      */
     public $ip = '';
     /**
-     * @var string 当前网络请求协议
+     * @var string request protocol
      */
     public $protocol = 'http';
     /**
-     * @var string 当前请求的域名
+     * @var string request host
      */
     public $hostname = '';
     /**
-     * @var string 当前请求referer
+     * @var string http refer
      */
-    public $referer = '';
+    public $refer = '';
     /**
-     * @var string 请求路径(经过处理)
+     * @var string router string
      */
     public $path = '';
     /**
-     * @var string 原始http/https url
+     * @var string original http/https url
      */
     public $baseUrl = '';
     /**
-     * @var array 所有headers(可读可写)
+     * @var array all request headers(only read)
      */
     public $headers;
     /**
-     * @var array cookie(可读可写)
+     * @var array cookie instance
      */
     public $cookie;
     /**
-     * @var array session(可读可写)
+     * @var array session instance
      */
     public $session;
     /**
-     * @var array 可读可写
+     * @var array body instance
      */
     public $body;
     /**
-     * @var array 可读可写
+     * @var array query instance
      */
     public $query;
 
@@ -97,7 +97,7 @@ final class Request
     }
 
     /**
-     * 框架內部重定向.
+     * redirect router.
      * @param string $value
      */
     public function redirect($value = '')
@@ -106,7 +106,7 @@ final class Request
     }
 
     /**
-     * 本次访问是否为POST.
+     * post check.
      * @return mixed
      */
     public function isPost()
@@ -115,7 +115,7 @@ final class Request
     }
 
     /**
-     * 获取此次请求的http headers相关信息
+     * get request headers
      * @return array
      */
     public function headers()
@@ -134,8 +134,8 @@ final class Request
     }
 
     /**
-     * body的赋值和获取.
-     * @param ICookie $cookie
+     * set body instance.
+     * @param BaseDynamic $cookie
      * @return array
      */
     public function body(BaseDynamic $body)
@@ -144,7 +144,7 @@ final class Request
     }
 
     /**
-     * cookie的赋值和获取.
+     * set cookie instance.
      * @param ICookie $cookie
      * @return array
      */
@@ -154,7 +154,7 @@ final class Request
     }
 
     /**
-     * session的赋值和获取.
+     * set session instance.
      * @return array
      */
     public function session(BaseDynamic $session)

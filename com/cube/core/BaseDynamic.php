@@ -10,7 +10,6 @@ namespace com\cube\core;
 
 /**
  * Class BaseDynamic.
- * 动态赋值类基类
  * @package com\cube\core
  */
 class BaseDynamic

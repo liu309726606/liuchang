@@ -15,25 +15,19 @@ namespace com\cube\error;
 class CubeException extends \Exception
 {
     /**
-     * PHP 版本过低.
+     * version low.
      * @var int
      */
     public static $VERSION_ERROR = 10000;
     
     /**
-     * 缺少扩展.
+     * lack of extension.
      * @var int
      */
     public static $EXT_ERROR = 10001;
 
     /**
-     * 国际化错误.
-     * @var int
-     */
-    public static $INTERNATION_ERROR = 10002;
-
-    /**
-     * 未知错误
+     * unknow error.
      * @var int
      */
     public static $UNKNOW_ERROR = 10009;

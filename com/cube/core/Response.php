@@ -25,7 +25,7 @@ final class Response
     }
 
     /**
-     * url 重定向
+     * url location to the client.
      * @param $path
      */
     public function location($path)
@@ -38,7 +38,7 @@ final class Response
     }
 
     /**
-     * 向客户端发送字符串.
+     * send the simple string to the client.
      * @param $value
      */
     public function send($value)
@@ -49,7 +49,7 @@ final class Response
     }
 
     /**
-     * 将数据以json形式返回.
+     * send the json string to the client.
      * @param $value
      */
     public function json($value)
@@ -60,7 +60,7 @@ final class Response
     }
 
     /**
-     * 将数据以jsonp形式返回.
+     * send the jsonp string to the client.
      * @param $value
      */
     public function jsonp($value)
@@ -79,10 +79,10 @@ final class Response
     }
 
     /**
-     * 渲染模板.
-     * @param $viewEngineClass 渲染模板的ViewEngine子类
-     * @param viewName 模板名称
-     * @param $value 传递数据
+     * send the content to the client by the viewEngine.
+     * @param ViewEngine $viewEngine
+     * @param viewName the name of template
+     * @param $value parameters
      */
     public function render(ViewEngine $viewEngine, $viewName, $value = null)
     {
@@ -92,7 +92,7 @@ final class Response
     }
 
     /**
-     * 重定向router.
+     * redirect router.
      * @param $value
      */
     public function redirect($value)
@@ -101,7 +101,7 @@ final class Response
     }
 
     /**
-     * 指定返回的http header statuCode.
+     * set httpHeader status.
      * @param $code
      */
     public function statusCode($code)

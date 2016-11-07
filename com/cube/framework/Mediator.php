@@ -12,14 +12,13 @@ use com\cube\middleware\RouterMiddleWare;
 
 /**
  * Class Mediator.
- * mvc观察者模式框架View层.
+ * the view layer of the MVC Framework.
  * @package com\cube\framework
  */
 abstract class Mediator extends RouterMiddleWare
 {
     /**
      * Mediator constructor.
-     * 提前注册当前Mediator所有感兴趣的消息类型.
      */
     public function __construct()
     {
@@ -37,7 +36,7 @@ abstract class Mediator extends RouterMiddleWare
     }
 
     /**
-     * 观察者管理器将启动相应的数据代理.
+     * get the model layer instance.
      * @param $name
      * @param null $value
      */
