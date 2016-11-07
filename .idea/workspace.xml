@@ -2,105 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7beb79-3c1f-458c-9b12-407c7a75010b" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/router/HttoRouter.php" afterPath="$PROJECT_DIR$/router/HttpRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/framework.iml" afterPath="$PROJECT_DIR$/.idea/framework.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/core/BaseDynamic.php" afterPath="$PROJECT_DIR$/com/cube/core/BaseDynamic.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/core/ISession.php" afterPath="$PROJECT_DIR$/com/cube/core/ISession.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/error/CubeException.php" afterPath="$PROJECT_DIR$/com/cube/error/CubeException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/framework/Mediator.php" afterPath="$PROJECT_DIR$/com/cube/framework/Mediator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/framework/Notifier.php" afterPath="$PROJECT_DIR$/com/cube/framework/Notifier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/framework/Proxy.php" afterPath="$PROJECT_DIR$/com/cube/framework/Proxy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/fs/FS.php" afterPath="$PROJECT_DIR$/com/cube/fs/FS.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/http/Http.php" afterPath="$PROJECT_DIR$/com/cube/http/Http.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/international/International.php" afterPath="$PROJECT_DIR$/com/cube/international/International.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/log/Log.php" afterPath="$PROJECT_DIR$/com/cube/log/Log.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/middleware/Connect.php" afterPath="$PROJECT_DIR$/com/cube/middleware/Connect.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/middleware/MiddleWare.php" afterPath="$PROJECT_DIR$/com/cube/middleware/MiddleWare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/middleware/RouterMiddleWare.php" afterPath="$PROJECT_DIR$/com/cube/middleware/RouterMiddleWare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/utils/ArrayUtil.php" afterPath="$PROJECT_DIR$/com/cube/utils/ArrayUtil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/utils/DBUtil.php" afterPath="$PROJECT_DIR$/com/cube/utils/DBUtil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/utils/SystemUtil.php" afterPath="$PROJECT_DIR$/com/cube/utils/SystemUtil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/utils/URLUtil.php" afterPath="$PROJECT_DIR$/com/cube/utils/URLUtil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/view/AngularEngine.php" afterPath="$PROJECT_DIR$/com/cube/view/AngularEngine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/view/EchoEngine.php" afterPath="$PROJECT_DIR$/com/cube/view/EchoEngine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/view/ViewEngine.php" afterPath="$PROJECT_DIR$/com/cube/view/ViewEngine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/international/CN" afterPath="$PROJECT_DIR$/international/CN" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/international/EN" afterPath="$PROJECT_DIR$/international/EN" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/cube.log" afterPath="$PROJECT_DIR$/log/cube.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/cube.mysql" afterPath="$PROJECT_DIR$/log/cube.mysql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MongoProxy.php" afterPath="$PROJECT_DIR$/model/MongoProxy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MysqlProxy.php" afterPath="$PROJECT_DIR$/model/MysqlProxy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/RedisProxy.php" afterPath="$PROJECT_DIR$/model/RedisProxy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/body/Body.php" afterPath="$PROJECT_DIR$/modules/body/Body.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/body/BodyInstance.php" afterPath="$PROJECT_DIR$/modules/body/BodyInstance.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/body/README" afterPath="$PROJECT_DIR$/modules/body/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/Cdn.php" afterPath="$PROJECT_DIR$/modules/cdn/Cdn.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/README.txt" afterPath="$PROJECT_DIR$/modules/cdn/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/autoload.php" afterPath="$PROJECT_DIR$/modules/cdn/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Auth.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Config.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Etag.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Etag.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Http/Client.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Http/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Http/Error.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Http/Error.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Http/Request.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Http/Request.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Http/Response.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Http/Response.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Processing/Operation.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Processing/Operation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Processing/PersistentFop.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Processing/PersistentFop.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Storage/BucketManager.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Storage/BucketManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Storage/FormUploader.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Storage/FormUploader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Storage/ResumeUploader.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Storage/ResumeUploader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Storage/UploadManager.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Storage/UploadManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Zone.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/Zone.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cdn/src/Qiniu/functions.php" afterPath="$PROJECT_DIR$/modules/cdn/src/Qiniu/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cookie/Cookie.php" afterPath="$PROJECT_DIR$/modules/cookie/Cookie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cookie/CookieInstance.php" afterPath="$PROJECT_DIR$/modules/cookie/CookieInstance.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/cookie/README.txt" afterPath="$PROJECT_DIR$/modules/cookie/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/engine/README.txt" afterPath="$PROJECT_DIR$/modules/engine/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/engine/RaintplEngine.php" afterPath="$PROJECT_DIR$/modules/engine/RaintplEngine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/image/Image.php" afterPath="$PROJECT_DIR$/modules/image/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/image/README.txt" afterPath="$PROJECT_DIR$/modules/image/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mongo/Mongo.php" afterPath="$PROJECT_DIR$/modules/mongo/Mongo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mongo/README.txt" afterPath="$PROJECT_DIR$/modules/mongo/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/otp/lib/base32.php" afterPath="$PROJECT_DIR$/modules/otp/lib/base32.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/otp/tests/HOTPTest.php" afterPath="$PROJECT_DIR$/modules/otp/tests/HOTPTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/otp/tests/OTPTest.php" afterPath="$PROJECT_DIR$/modules/otp/tests/OTPTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/otp/tests/TOTPTest.php" afterPath="$PROJECT_DIR$/modules/otp/tests/TOTPTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/otp/tests/TestTest.php" afterPath="$PROJECT_DIR$/modules/otp/tests/TestTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/redis/README.txt" afterPath="$PROJECT_DIR$/modules/redis/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/redis/Redis.php" afterPath="$PROJECT_DIR$/modules/redis/Redis.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/session/LocalSession.php" afterPath="$PROJECT_DIR$/modules/session/LocalSession.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/session/README.txt" afterPath="$PROJECT_DIR$/modules/session/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/session/Session.php" afterPath="$PROJECT_DIR$/modules/session/Session.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/session_redis/README.txt" afterPath="$PROJECT_DIR$/modules/session_redis/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/session_redis/RedisSession.php" afterPath="$PROJECT_DIR$/modules/session_redis/RedisSession.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/session_redis/RedisSessionInstance.php" afterPath="$PROJECT_DIR$/modules/session_redis/RedisSessionInstance.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/CdnRouter.php" afterPath="$PROJECT_DIR$/router/CdnRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/CookieRouter.php" afterPath="$PROJECT_DIR$/router/CookieRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/ImageRouter.php" afterPath="$PROJECT_DIR$/router/ImageRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/InternationalRouter.php" afterPath="$PROJECT_DIR$/router/InternationalRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/JsonRouter.php" afterPath="$PROJECT_DIR$/router/JsonRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/JsonpRouter.php" afterPath="$PROJECT_DIR$/router/JsonpRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/LocationRouter.php" afterPath="$PROJECT_DIR$/router/LocationRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/OtpRouter.php" afterPath="$PROJECT_DIR$/router/OtpRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/RedirectRouter.php" afterPath="$PROJECT_DIR$/router/RedirectRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/RedisSessionRouter.php" afterPath="$PROJECT_DIR$/router/RedisSessionRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/SendRouter.php" afterPath="$PROJECT_DIR$/router/SendRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/SessionRouter.php" afterPath="$PROJECT_DIR$/router/SessionRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/UploadRouter.php" afterPath="$PROJECT_DIR$/router/UploadRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/ViewEngineRouter.php" afterPath="$PROJECT_DIR$/router/ViewEngineRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/upload_test_0.html" afterPath="$PROJECT_DIR$/test/upload_test_0.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/upload_test_1.html" afterPath="$PROJECT_DIR$/test/upload_test_1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/upload_test_2.html" afterPath="$PROJECT_DIR$/test/upload_test_2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/page.6fa382513940e98052a3fbe72a085b54.rtpl.php" afterPath="$PROJECT_DIR$/tmp/page.6fa382513940e98052a3fbe72a085b54.rtpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/404.html" afterPath="$PROJECT_DIR$/view/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/500.html" afterPath="$PROJECT_DIR$/view/500.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/db/DB.php" afterPath="$PROJECT_DIR$/com/cube/db/DB.php" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -122,32 +25,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="www.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www.php">
+      <file leaf-file-name="DB.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com/cube/db/DB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="45" column="108" selection-start-line="45" selection-start-column="108" selection-end-line="45" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpRouter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/router/HttpRouter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="390">
+              <caret line="112" column="41" selection-start-line="112" selection-start-column="41" selection-end-line="112" selection-end-column="41" />
+              <folding>
+                <marker date="1478499815000" expanded="true" signature="10954:10966" ph="DELETE FROM " />
+                <marker date="1478499815000" expanded="true" signature="11613:11625" ph="INSERT INTO ${$this-&gt;_table_name}... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,6 +54,7 @@
         <option value="$PROJECT_DIR$/log/cube.mysql" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/com/cube/db/DB.php" />
       </list>
     </option>
   </component>
@@ -209,37 +96,63 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
+              <option name="myItemId" value="php-mvc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
+              <option name="myItemId" value="php-mvc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
+              <option name="myItemId" value="php-mvc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
+              <option name="myItemId" value="php-mvc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
+              <option name="myItemId" value="php-mvc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="router" />
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cube" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-mvc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cube" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -302,12 +215,14 @@
       <option name="presentableId" value="Default" />
       <updated>1478325926021</updated>
       <workItem from="1478325927232" duration="1033000" />
-      <workItem from="1478329886307" duration="245000" />
+      <workItem from="1478329886307" duration="868000" />
+      <workItem from="1478482718233" duration="26000" />
+      <workItem from="1478499767683" duration="52000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1278000" />
+    <option name="totallyTimeSpent" value="1979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -322,17 +237,17 @@
     <frame x="1366" y="-107" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2550586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2603834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32917964" sideWeight="0.5042598" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32917964" sideWeight="0.49574015" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -386,13 +301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/cube/db/DB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README" />
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
@@ -405,7 +313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -413,23 +320,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="45" column="108" selection-start-line="45" selection-start-column="108" selection-end-line="45" selection-end-column="108" />
-          <folding />
+        <state relative-caret-position="381">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/cube/db/DB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="112" column="41" selection-start-line="112" selection-start-column="41" selection-end-line="112" selection-end-column="41" />
+          <folding>
+            <marker date="1478499815000" expanded="true" signature="10954:10966" ph="DELETE FROM " />
+            <marker date="1478499815000" expanded="true" signature="11613:11625" ph="INSERT INTO ${$this-&gt;_table_name}... " />
+          </folding>
         </state>
       </provider>
     </entry>

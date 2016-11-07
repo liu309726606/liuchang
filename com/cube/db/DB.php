@@ -102,6 +102,7 @@ final class DB
     {
         if (!empty(self::$pdo)) {
             try {
+                Log::mysql($sql . ' task: ' . ($task ? 'true' : 'false'));
                 if ($task == true) {
                     self::$pdo->query('SET AUTOCOMMIT=0');
                     self::$pdo->query('BEGIN');
@@ -115,10 +116,10 @@ final class DB
                 } else {
                     if ($task == true) self::$pdo->query('COMMIT');
                 }
-                Log::mysql($sql . ' => sql back line ' . $lineNum . ' task: ' . $task ? 'true' : 'false');
+                Log::mysql('=> Error ' . $lineNum);
                 return $lineNum;
             } catch (\PDOException $e) {
-                Log::mysql($sql . ' => Error ' . $e->getTraceAsString());
+                Log::mysql('=> Error ' . $e->getTraceAsString());
                 return -1;
             }
         }
@@ -481,7 +482,7 @@ class DBModel
 
             if (!empty($this->_where)) {
                 $unique_key = explode('=', $this->_where)[0];
-                $sql .= ' SELECT (' . join(',', $values) . ') FROM DUAL WHERE NOT EXISTS(SELECT ';
+                $sql .= ' SELECT ' . join(',', $values) . ' FROM DUAL WHERE NOT EXISTS(SELECT ';
                 $sql .= $unique_key . ' FROM ' . $this->_table_name . ' WHERE ' . $this->_where . ')';
             } else {
                 $sql .= ' VALUES (' . join(',', $values) . ')';
