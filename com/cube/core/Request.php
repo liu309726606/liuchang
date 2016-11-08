@@ -8,8 +8,8 @@
 
 namespace com\cube\core;
 
+use com\cube\config\Config;
 use com\cube\log\Log;
-use com\cube\utils\ArrayUtil;
 
 /**
  * Class Request.
@@ -28,7 +28,8 @@ final class Request
     /**
      * @var string request host
      */
-    public $hostname = '';
+    public $host = '';
+    public $uri = '';
     /**
      * @var string http refer
      */
@@ -64,33 +65,33 @@ final class Request
 
     /**
      * Request constructor.
-     * @param $conf config json framework
      */
-    public function __construct($conf)
+    public function __construct()
     {
         //common.
-        $this->baseUrl = $this->protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        $this->path = $_SERVER['PHP_SELF'];
-        $this->hostname = $_SERVER['HTTP_HOST'];
+        $this->host = $_SERVER['HTTP_HOST'];
         $this->ip = $_SERVER['REMOTE_ADDR'];
+        $this->uri = $_SERVER['REQUEST_URI'];
+        $this->referer = @$_SERVER['HTTP_REFERER'];
         $this->headers = $this->headers();
-        if (isset($_SERVER["HTTP_REFERER"])) {
-            $this->referer = $_SERVER['HTTP_REFERER'];
-        }
+        $this->baseUrl = $this->protocol . '://' . $this->host . $this->uri;
 
         //queryString.
         $this->query = $_GET;
 
-        //router.
-        $router = $conf["router"];
-        if (isset($this->query[$router]) && !empty($this->query[$router])) {
-            $this->path = $this->query[$router];
+        //router path.
+        $router = Config::get('core', 'router');
+        $facade = Config::get('core', 'facade');
+        if (empty($router)) {
+            $this->path = str_replace($facade, '', $_SERVER['PHP_SELF']);
         } else {
-            $this->path = '/';
+            if (isset($_GET[$router]) && !empty($_GET[$router])) {
+                $this->path = substr($this->query[$router], 0, 1) == '/' ? $_GET[$router] : ('/' . $_GET[$router]);
+                unset($this->query[$router]);
+            } else {
+                $this->path = '/';
+            }
         }
-
-        //remove parameter router from query.
-        unset($this->query[$router]);
 
         //request log.
         Log::log($this->baseUrl);
@@ -109,9 +110,9 @@ final class Request
      * post check.
      * @return mixed
      */
-    public function isPost()
+    public function post()
     {
-        return $this->body()->isPost;
+        return $this->body->post();
     }
 
     /**

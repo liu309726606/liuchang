@@ -10,13 +10,13 @@ namespace com\cube\utils;
 
 /**
  * Class ArrayUtil.
- * 数组工具类.
  * @package com\cube\utils
  */
 final class ArrayUtil
 {
     /**
-     * 按照key从数组中删除元素.
+     * remove the element by the key from the array.
+     *
      * @param $data
      * @param $key
      * @return mixed
@@ -35,7 +35,7 @@ final class ArrayUtil
     }
 
     /**
-     * 按照value从数组中删除元素.
+     * remove the element by the value from the array.
      * @param $data
      * @param $value
      */
@@ -50,25 +50,5 @@ final class ArrayUtil
             }
         }
         return $data;
-    }
-}
-
-/**
- * Class ArrayFunction.
- * 数组暂存回调函数类.
- * @package com\cube\utils
- */
-class ArrayFunction
-{
-    private $array;
-
-    public function __construct($func)
-    {
-        $this->array = array($func);
-    }
-
-    public function func()
-    {
-        return $this->array[0];
     }
 }

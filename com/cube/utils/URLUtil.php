@@ -15,7 +15,7 @@ namespace com\cube\utils;
 final class URLUtil
 {
     /**
-     * 判断当前URL是否为HTTPS.
+     * url is https protocol or not.
      * @param $url
      * @return string
      */

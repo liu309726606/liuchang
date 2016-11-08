@@ -10,13 +10,12 @@ namespace com\cube\utils;
 
 /**
  * Class SystemUtil.
- * 系统工具.
  * @package com\cube\utils
  */
 final class SystemUtil
 {
     /**
-     * 框架所需PHP最低版本号.
+     * php lowest version
      * @return string
      */
     public static function kernel()
@@ -25,7 +24,7 @@ final class SystemUtil
     }
 
     /**
-     * 检测PHP版本是否足够.
+     * check the php version.
      * @return bool
      */
     public static function check_version()
@@ -50,7 +49,7 @@ final class SystemUtil
     }
 
     /**
-     * 框架所需扩展类库.
+     * the extensions which the cube needs.
      * @return array
      */
     private static function extensions()
@@ -63,7 +62,7 @@ final class SystemUtil
     }
 
     /**
-     * 检测框架所需扩展是否齐全.
+     * check the needed extensions.
      * @param $plugins
      * @return bool
      */

@@ -8,6 +8,7 @@
 
 namespace modules\session;
 
+use com\cube\config\Config;
 use com\cube\core\Response;
 use com\cube\core\Request;
 use com\cube\middleware\MiddleWare;
@@ -24,8 +25,8 @@ class Session extends MiddleWare
         $this->app->load("./modules/session/LocalSession.php");
 
         //default action.
-        session_set_cookie_params($this->app->conf()["session_timeout"]);
-        session_name($this->app->conf()["session_name"]);
+        session_set_cookie_params(Config::get('core', 'session_timeout'));
+        session_name(Config::get('core', 'session_name'));
         session_start();
 
         session_regenerate_id(true);

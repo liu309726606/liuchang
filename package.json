@@ -30,7 +30,8 @@
     "tmp": "tmp/",
     "upload": "upload/"
   },
-  "framework": {
+  "core": {
+    "facade": "/www.php",
     "router": "router",
     "session_name": "CUBE_SESSID",
     "session_timeout": 86400,
@@ -43,7 +44,6 @@
     "modules/cookie/Cookie.php",
     "modules/session/Session.php",
     "modules/session_redis/RedisSession.php",
-    "modules/cdn/Cdn.php",
     "modules/body/Body.php",
     "modules/mongo/Mongo.php",
     "modules/redis/Redis.php"
@@ -56,6 +56,6 @@
   "router": {
     "/mysql": "router/MysqlRouter.php",
     "/upload": "router/UploadRouter.php",
-    "/redis_session": "router/RedisSessionRouter.php"
+    "/send": "router/SendRouter.php"
   }
 }

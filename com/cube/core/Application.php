@@ -8,6 +8,7 @@
 
 namespace com\cube\core;
 
+use com\cube\config\Config;
 use com\cube\error\CubeException;
 use com\cube\framework\Notifier;
 use com\cube\fs\FS;
@@ -29,6 +30,7 @@ final class Application
      */
     const INIT_LIBS = array(
         'com/cube/log/Log.php',
+        'com/cube/config/Config.php',
         'com/cube/utils/SystemUtil.php',
         'com/cube/error/CubeException.php',
         'com/cube/fs/FS.php',
@@ -52,39 +54,14 @@ final class Application
         'com/cube/core/BaseDynamic.php',
         'com/cube/core/Request.php',
         'com/cube/core/Response.php',
+        'com/cube/core/IBody.php',
         'com/cube/core/ISession.php',
         'com/cube/framework/Notifier.php',
         'com/cube/framework/Mediator.php',
         'com/cube/framework/Proxy.php',
     );
 
-    /**
-     * package.json Config JSON.
-     */
-    public static $CONFIG = array(
-        "log" => array(
-            "log" => "log/cube.log",
-            "mysql" => "log/cube.mysql"
-        ),
-        "dir" => array(
-            "router" => "router/",
-            "view" => "view/",
-            "tmp" => "tmp/",
-            "upload" => "upload/"
-        ),
-        "framework" => array(
-            "router" => "router",
-            "session_name" => "PHPSESSID",
-            "session_timeout" => 360000,
-            "jsonp" => "callback"
-        )
-    );
 
-    /**
-     * 框架时间戳.
-     * @var int
-     */
-    public static $start_time = 0;
     /**
      * 项目根目录.
      * @var string
@@ -131,11 +108,6 @@ final class Application
      * @var Router
      */
     public $connect;
-    /**
-     * 程序是否已经开启.
-     * @var bool
-     */
-    private $started = false;
 
 
     private static $instance;
@@ -174,18 +146,11 @@ final class Application
      */
     private function __construct()
     {
-        if (!empty(self::$instance)) {
-            throw new \Exception('Application Instance Must be unique!');
-        }
-        self::$instance = $this;
-
-        //init time.
-        self::$start_time = microtime(true);
-        //timezone.
-        date_default_timezone_set('Asia/Shanghai');
-
-
         $this->load(self::INIT_LIBS);
+
+        //timezone.
+        Config::set('TIME_ZONE', 'Asia/Shanghai');
+
         //check php version.
         if (!SystemUtil::check_version()) {
             throw new CubeException('PHP VERSION IS LOW.', CubeException::$VERSION_ERROR);
@@ -202,36 +167,33 @@ final class Application
 
     /**
      * initialize Application Framework.
-     * @param $www_dir
+     * @param $www_dirF
      * @param $conf_path
      */
     public function init($www_dir, $conf_path)
     {
         self::$www_dir = $www_dir . '/';
-        if (!defined("BASE_DIR")) define("BASE_DIR", self::$www_dir);
 
-
-        //load conf file.
-        self::$CONFIG = json_decode(FS::read(self::$www_dir . $conf_path), true);
-
+        Config::set('BASE_DIR', self::$www_dir);
+        Config::init(json_decode(FS::read(self::$www_dir . $conf_path), true));
 
         //dir config.
-        self::$router_dir = self::$www_dir . self::$CONFIG['dir']['router'];
-        self::$view_dir = self::$www_dir . self::$CONFIG['dir']['view'];
-        self::$upload_dir = self::$www_dir . self::$CONFIG['dir']['upload'];
-        self::$tmp_dir = self::$www_dir . self::$CONFIG['dir']['tmp'];
+        self::$router_dir = self::$www_dir . Config::get('dir', 'router');
+        self::$view_dir = self::$www_dir . Config::get('dir', 'view');
+        self::$upload_dir = self::$www_dir . Config::get('dir', 'upload');
+        self::$tmp_dir = self::$www_dir . Config::get('dir', 'tmp');
 
 
         //load engine.
-        $this->load(self::$CONFIG["engine"]);
+        $this->load(Config::get('engine'));
         //load modules.
-        $this->load(self::$CONFIG["modules"]);
+        $this->load(Config::get('modules'));
         //init model.
-        $this->notifier = Notifier::getInstance()->init(self::$CONFIG['model']);
+        $this->notifier = Notifier::getInstance()->init(Config::get('model'));
 
 
         //init Request.
-        $this->request = new Request($this->conf());
+        $this->request = new Request();
         //init Response.
         $this->response = new Response();
 
@@ -267,15 +229,15 @@ final class Application
      */
     public function startup()
     {
-        if ($this->started) {
+        if (Config::get('START')) {
             throw new CubeException(CubeException::$UNKNOW_ERROR);
         }
 
-        foreach (self::$CONFIG['router'] as $key => $value) {
+        foreach (Config::get('router') as $key => $value) {
             $this->on($key, $value);
         }
 
-        $this->started = true;
+        Config::set('START', true);
         $this->connect->restart();
 
         //garbageCollection.
@@ -311,15 +273,6 @@ final class Application
         if (!empty($object)) {
             $this->connect->on($filter, $object);
         }
-    }
-
-    /**
-     * Get the package.json framework object.
-     * @return null
-     */
-    public function conf()
-    {
-        return self::$CONFIG['framework'];
     }
 
     /**

@@ -8,7 +8,7 @@
 
 namespace com\cube\log;
 
-use com\cube\core\Application;
+use com\cube\config\Config;
 use com\cube\fs\FS;
 
 /**
@@ -37,7 +37,7 @@ final class Log
     public static function log($value, $displayDuration = false)
     {
         if ($displayDuration) {
-            self::$logs .= '[' . date('Y-m-d H:i:s', time()) . '] ' . $value . ' (' . intval((microtime(true) - Application::$start_time) * 1000) . "ms)\t\n";
+            self::$logs .= '[' . date('Y-m-d H:i:s', time()) . '] ' . $value . ' (' . intval((microtime(true) - Config::startTime()) * 1000) . "ms)\t\n";
         } else {
             self::$logs .= '[' . date('Y-m-d H:i:s', time()) . '] ' . $value . "\t\n";
         }
@@ -76,12 +76,12 @@ final class Log
     public static function flush()
     {
         if (!empty(self::$logs)) {
-            FS::append(Application::$CONFIG['log']['log'], self::$logs);
+            FS::append(Config::get('log', 'log'), self::$logs);
             self::$logs = '';
         }
 
         if (!empty(self::$mysql_logs)) {
-            FS::append(Application::$CONFIG['log']['mysql'], self::$mysql_logs);
+            FS::append(Config::get('log', 'mysql'), self::$mysql_logs);
             self::$mysql_logs = '';
         }
     }

@@ -8,6 +8,7 @@
 
 namespace com\cube\core;
 
+use com\cube\config\Config;
 use com\cube\log\Log;
 use com\cube\view\ViewEngine;
 
@@ -20,8 +21,7 @@ final class Response
 {
     public function __construct()
     {
-        header('ServiceX:' . Application::$CONFIG['name'] . ' version:' . Application::$CONFIG['version']);
-
+        header('ServiceX:' . Config::get('name') . ' version:' . Config::get('version'));
     }
 
     /**
@@ -65,11 +65,11 @@ final class Response
      */
     public function jsonp($value)
     {
-        $callback_str = Application::$FRAMEWORK['jsonp'];
+        $callback_str = Config::get('core','jsonp');
         if (empty($callback_str)) {
             return $this;
         }
-        $callback_func = Application::getInstance()->request->query[$callback_str];
+        $callback_func = $_GET[$callback_str];
         if (empty($callback_func)) {
             return $this;
         }

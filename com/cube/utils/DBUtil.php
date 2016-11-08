@@ -11,7 +11,6 @@ namespace com\cube\utils;
 
 /**
  * Class DBUtil.
- * 数据库相关辅助项.
  * @package com\cube\utils
  */
 class DBUtil
