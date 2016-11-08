@@ -14,12 +14,10 @@ use com\cube\core\Request;
 use com\cube\middleware\Connect;
 
 /**
- * Class RouterIDRouter.
- * get the parameters from the path info
- * such as /:p1/:p2/:p3(demo)
+ * Class ParamsRouter(Demo)
  * @package router
  */
-class RouterIDRouter extends Mediator
+class ParamsRouter extends Mediator
 {
     public function __construct()
     {
@@ -28,16 +26,14 @@ class RouterIDRouter extends Mediator
 
     public function getName()
     {
-        return '/cookie';
+        return '/params/:id';
     }
 
     public function run(Request $req, Response $res, Connect $connect)
     {
-        $res->json($req->cookie->test_key);
-
-        $req->cookie->test_key = time();
+        $res->send('params.id: ' . $req->params->id);
     }
 }
 
 //exec class instance.
-new RouterIDRouter();
+new ParamsRouter();

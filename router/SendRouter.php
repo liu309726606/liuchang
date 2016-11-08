@@ -14,8 +14,7 @@ use com\cube\core\Request;
 use com\cube\middleware\Connect;
 
 /**
- * Class SendRouter.
- * 发送简单字符串(示范性demo)
+ * Class SendRouter(Demo)
  * @package router
  */
 class SendRouter extends Mediator

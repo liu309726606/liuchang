@@ -62,6 +62,11 @@ final class Request
      * @var array query instance
      */
     public $query;
+    /**
+     * /router/:id/:name,$params['id']
+     * @var
+     */
+    public $params;
 
     /**
      * Request constructor.
@@ -139,7 +144,7 @@ final class Request
      * @param BaseDynamic $cookie
      * @return array
      */
-    public function body(BaseDynamic $body)
+    public function body(IBody $body)
     {
         $this->body = $body;
     }
@@ -158,8 +163,17 @@ final class Request
      * set session instance.
      * @return array
      */
-    public function session(BaseDynamic $session)
+    public function session(ISession $session)
     {
         $this->session = $session;
+    }
+
+    /**
+     * set params instance.
+     * @param BaseDynamic $params
+     */
+    public function params(BaseDynamic $params)
+    {
+        $this->params = $params;
     }
 }

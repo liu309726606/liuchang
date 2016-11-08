@@ -27,7 +27,7 @@
 *  router - router loaded(not instantiation)
 
 ### ./www.php (the facade file of the Application)
-* Demo: ./www.php?router=http (Cube Framework Application will find the router config from the package.json)
+* Virtual Router Path Demo: ./www.php?router=http (Cube Framework Application will find the router config from the package.json)
 
 ### fast and simple!
 * You do not need to write code in the import file, simply by modifying the configuration file and the logic code to complete what you want!

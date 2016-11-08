@@ -15,7 +15,7 @@ use com\cube\middleware\Connect;
 
 /**
  * Class CookieRouter.
- * cookie操作(示范性demo)
+ * cookie operate demo.
  * @package router
  */
 class CookieRouter extends Mediator
