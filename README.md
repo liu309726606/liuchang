@@ -17,21 +17,6 @@
 * /com/cube/utils - tools
 * /com/cube/view - ViewEngine (EchoEngine & AngularEngine)
 
-### ./internation - the dir of the international
-
-### ./log - log store dir
-
-### ./model - Model Proxy dir
-
-### ./modules - middleware extesion
-
-### ./router - View Mediator RouterMiddleWare
-
-### ./tmp - temporary dir
-
-### ./upload - upload dir
-
-### ./view - viewEngine dir
 
 ### ./package.json - config file
 *  dir - dir config
@@ -43,3 +28,7 @@
 
 ### ./www.php (the facade file of the Application)
 * Demo: ./www.php?router=http (Cube Framework Application will find the router config from the package.json)
+
+### fast and simple!
+* You do not need to write code in the import file, simply by modifying the configuration file and the logic code to complete what you want!
+
