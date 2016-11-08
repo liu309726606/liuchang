@@ -1,5 +1,5 @@
 # The framework named cube for the php.
-* Single Kernel Mode.
+* A simple and efficient development framework based on middleware, configuration and extension
 * Author by linyang created on 2016-08.
 * Version Beta 1.0.0
 
