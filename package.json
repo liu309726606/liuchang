@@ -1,6 +1,6 @@
 {
   "name": "cube",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "github": "xxx",
   "start": "php ./www.php",
