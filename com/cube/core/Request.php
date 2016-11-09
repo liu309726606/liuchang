@@ -8,7 +8,6 @@
 
 namespace com\cube\core;
 
-use com\cube\config\Config;
 use com\cube\log\Log;
 
 /**
@@ -97,6 +96,12 @@ final class Request
                 $this->path = '/';
             }
         }
+        //delete the last /
+        if ($this->path != '/' && substr($this->path,-1) == '/') {
+            $this->path = substr($this->path, 0, strlen($this->path) - 1);
+        }
+        //lower string.
+        $this->path = strtolower($this->path);
 
         //request log.
         Log::log($this->baseUrl);
@@ -172,7 +177,7 @@ final class Request
      * set params instance.
      * @param BaseDynamic $params
      */
-    public function params(BaseDynamic $params)
+    public function params($params)
     {
         $this->params = $params;
     }

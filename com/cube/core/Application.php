@@ -8,10 +8,7 @@
 
 namespace com\cube\core;
 
-use com\cube\config\Config;
 use com\cube\error\CubeException;
-use com\cube\framework\Notifier;
-use com\cube\fs\FS;
 use com\cube\log\Log;
 use com\cube\utils\SystemUtil;
 use com\cube\middleware\Connect;
@@ -28,21 +25,21 @@ final class Application
     /**
      * Framework init dependency package1.
      */
-    const INIT_LIBS = array(
+    const INIT_LIBS = [
         'com/cube/log/Log.php',
-        'com/cube/config/Config.php',
+        'com/cube/core/Config.php',
         'com/cube/utils/SystemUtil.php',
         'com/cube/error/CubeException.php',
         'com/cube/fs/FS.php',
         'com/cube/view/ViewEngine.php',
         'com/cube/view/EchoEngine.php',
         'com/cube/view/AngularEngine.php'
-    );
+    ];
 
     /**
      * Framework init dependency package2.
      */
-    const COMMON_LIBS = array(
+    const COMMON_LIBS = [
         'com/cube/international/International.php',
         'com/cube/utils/ArrayUtil.php',
         'com/cube/utils/URLUtil.php',
@@ -50,49 +47,14 @@ final class Application
         'com/cube/http/Http.php',
         'com/cube/middleware/Connect.php',
         'com/cube/middleware/MiddleWare.php',
-        'com/cube/middleware/RouterMiddleWare.php',
         'com/cube/core/BaseDynamic.php',
         'com/cube/core/Request.php',
         'com/cube/core/Response.php',
         'com/cube/core/IBody.php',
         'com/cube/core/ISession.php',
-        'com/cube/framework/Notifier.php',
-        'com/cube/framework/Mediator.php',
-        'com/cube/framework/Proxy.php',
-    );
+        'com/cube/core/Proxy.php',
+    ];
 
-
-    /**
-     * 项目根目录.
-     * @var string
-     */
-    public static $www_dir = '';
-    /**
-     * 路由目录.
-     * @var string
-     */
-    public static $router_dir = 'router/';
-    /**
-     * 模板目录.
-     * @var string
-     */
-    public static $view_dir = 'view/';
-    /**
-     * 上传目录.
-     * @var string
-     */
-    public static $upload_dir = 'upload/';
-    /**
-     * 缓存目录.
-     * @var string
-     */
-    public static $tmp_dir = 'tmp/';
-
-    /**
-     * 框架内部通讯核心.
-     * @var
-     */
-    public $notifier;
     /**
      * Http Input Stream Instance.
      * @var Request
@@ -107,8 +69,7 @@ final class Application
      * 中间件管理器.
      * @var Router
      */
-    public $connect;
-
+    private static $connect;
 
     private static $instance;
 
@@ -142,13 +103,33 @@ final class Application
     }
 
     /**
+     * Get the connect instance,
+     * @return Router
+     */
+    public static function router()
+    {
+        return self::$connect;
+    }
+
+    /**
      * Application constructor.
      */
     private function __construct()
     {
-        $this->load(self::INIT_LIBS);
+    }
 
-        //timezone.
+    /**
+     * initialize Application Framework.
+     * @param $www_dirF
+     * @param $conf_path
+     */
+    public function init($www_dir)
+    {
+        foreach (self::INIT_LIBS as $key => $path) {
+            require_once $www_dir . '/' . $path;
+        }
+
+        Config::set('BASE_DIR', $www_dir . '/');
         Config::set('TIME_ZONE', 'Asia/Shanghai');
 
         //check php version.
@@ -161,67 +142,22 @@ final class Application
             throw new CubeException('Unknown Ext ' . $unknown_ext, CubeException::$EXT_ERROR);
         }
 
+        Config::init();
+
+        //load engine & modules.
         //load libs.
-        $this->load(self::COMMON_LIBS);
-    }
-
-    /**
-     * initialize Application Framework.
-     * @param $www_dirF
-     * @param $conf_path
-     */
-    public function init($www_dir, $conf_path)
-    {
-        self::$www_dir = $www_dir . '/';
-
-        Config::set('BASE_DIR', self::$www_dir);
-        Config::init(json_decode(FS::read(self::$www_dir . $conf_path), true));
-
-        //dir config.
-        self::$router_dir = self::$www_dir . Config::get('dir', 'router');
-        self::$view_dir = self::$www_dir . Config::get('dir', 'view');
-        self::$upload_dir = self::$www_dir . Config::get('dir', 'upload');
-        self::$tmp_dir = self::$www_dir . Config::get('dir', 'tmp');
-
-
-        //load engine.
-        $this->load(Config::get('engine'));
-        //load modules.
-        $this->load(Config::get('modules'));
-        //init model.
-        $this->notifier = Notifier::getInstance()->init(Config::get('model'));
-
+        Config::load(self::COMMON_LIBS);
+        Config::load(Config::get('engine'));
+        Config::load(Config::get('modules'));
 
         //init Request.
         $this->request = new Request();
         //init Response.
         $this->response = new Response();
+        //init connect.
+        self::$connect = new Connect($this->request, $this->response, $this);
 
-        //init router.
-        $this->connect = Connect::getInstance()->init(
-            $this->request,
-            $this->response,
-            $this
-        );
-    }
-
-    /**
-     * Application global load php file.
-     * @param $options support path string or paths array
-     */
-    public function load($options)
-    {
-        $arr = null;
-        if (empty($options)) {
-            return;
-        } elseif (is_array($options)) {
-            $arr = $options;
-        } else {
-            $arr = array($options);
-        }
-        foreach ($arr as $key => $path) {
-            require_once self::$www_dir . $path;
-        }
+        return $this;
     }
 
     /**
@@ -232,14 +168,10 @@ final class Application
         if (Config::get('START')) {
             throw new CubeException(CubeException::$UNKNOW_ERROR);
         }
-
-        foreach (Config::get('router') as $key => $value) {
-            $this->on($key, $value);
-        }
-
         Config::set('START', true);
-        $this->connect->restart();
+        Config::load(Config::get('core', 'app'));
 
+        self::$connect->restart();
         //garbageCollection.
         self::gc();
     }
@@ -252,27 +184,6 @@ final class Application
     {
         $this->request->redirect($router);
         $this->connect->restart();
-    }
-
-    /**
-     * Add Common MiddleWare
-     * @param $middleware
-     */
-    public function link($value)
-    {
-        $this->connect->link($value);
-    }
-
-    /**
-     * Add RouterMiddleWare.
-     * @param $filter
-     * @param $className router ClassName or Instance.
-     */
-    public function on($filter, $object)
-    {
-        if (!empty($object)) {
-            $this->connect->on($filter, $object);
-        }
     }
 
     /**

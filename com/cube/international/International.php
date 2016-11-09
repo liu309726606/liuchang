@@ -8,23 +8,22 @@
 
 namespace com\cube\international;
 
-use com\cube\core\Application;
+use com\cube\core\Config;
 use com\cube\fs\FS;
 
 /**
  * Class Internation.
- * 全局国际化字段.
  * @package com\cube\international
  */
 class International
 {
     /**
-     * 语言包存储器.
+     * key-value storage.
      */
     private static $languages = null;
 
     /**
-     *
+     * get the key.
      * @param $name
      * @param $key
      * @return mixed
@@ -36,7 +35,7 @@ class International
         }
 
         if (empty($languages[$lan])) {
-            $content = FS::read(Application::$www_dir . Application::$CONFIG['international'][$lan]);
+            $content = FS::read(Config::$VALUE['WWW'] . Config::get('international', $lan));
             $list = array();
             $stack = explode('\t\n', $content);
             foreach ($stack as $value) {
@@ -45,7 +44,7 @@ class International
             }
             self::$languages[$lan] = $list;
         }
-        
+
         return self::$languages[$lan][$key];
     }
 }

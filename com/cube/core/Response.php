@@ -8,7 +8,6 @@
 
 namespace com\cube\core;
 
-use com\cube\config\Config;
 use com\cube\log\Log;
 use com\cube\view\ViewEngine;
 

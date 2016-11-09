@@ -9,7 +9,7 @@
 namespace model;
 
 use modules\redis\Redis;
-use com\cube\framework\Proxy;
+use com\cube\core\Proxy;
 
 /**
  * Class RedisProxy.

@@ -25,13 +25,13 @@
     "EN": "international/EN"
   },
   "dir": {
-    "router": "router/",
     "view": "view/",
     "tmp": "tmp/",
     "upload": "upload/"
   },
   "core": {
     "facade": "/www.php",
+    "app": "app.php",
     "router": "router",
     "session_name": "CUBE_SESSID",
     "session_timeout": 86400,
@@ -52,10 +52,5 @@
     "mongo": "model/MongoProxy.php",
     "redis": "model/RedisProxy.php",
     "mysql": "model/MysqlProxy.php"
-  },
-  "router": {
-    "/mysql": "router/MysqlRouter.php",
-    "/upload": "router/UploadRouter.php",
-    "/send": "router/SendRouter.php"
   }
 }

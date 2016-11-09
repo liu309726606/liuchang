@@ -17,11 +17,11 @@ use modules\cookie\Cookie;
 use modules\body\Body;
 
 //initialize the cube framework.
-$app = Application::getInstance();
-$app->init(__DIR__, 'package.json');
+$app = Application::getInstance()->init(__DIR__);
 
+$router = Application::router();
 //setup common init middleWares.
-$app->link([
+$router->on([
     new Cookie(),
     new Body(),
     new Session(),

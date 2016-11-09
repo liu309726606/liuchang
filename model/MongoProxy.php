@@ -9,7 +9,7 @@
 namespace model;
 
 
-use com\cube\framework\Proxy;
+use com\cube\core\Proxy;
 use modules\mongo\Mongo;
 
 /**

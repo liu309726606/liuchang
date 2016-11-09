@@ -8,7 +8,7 @@
 
 namespace com\cube\log;
 
-use com\cube\config\Config;
+use com\cube\core\Config;
 use com\cube\fs\FS;
 
 /**
@@ -32,12 +32,12 @@ final class Log
     /**
      * Append info log to log string.
      * @param $value
-     * @param $displayDuration 是否打印耗时
+     * @param $displayDuration
      */
     public static function log($value, $displayDuration = false)
     {
         if ($displayDuration) {
-            self::$logs .= '[' . date('Y-m-d H:i:s', time()) . '] ' . $value . ' (' . intval((microtime(true) - Config::startTime()) * 1000) . "ms)\t\n";
+            self::$logs .= '[' . date('Y-m-d H:i:s', time()) . '] ' . $value . ' (' .Config::getTimer() . "ms)\t\n";
         } else {
             self::$logs .= '[' . date('Y-m-d H:i:s', time()) . '] ' . $value . "\t\n";
         }

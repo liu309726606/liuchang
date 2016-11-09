@@ -7,58 +7,49 @@
  */
 
 namespace com\cube\middleware;
+use com\cube\core\Application;
 
 
 /**
  * Class Connect.
- * 中间件控制类
+ * MiddleWare Controller.
  * @package com\cube\middleware
  */
 final class Connect
 {
     /**
-     * 请求封装实例.
+     * request instance reference.
      * @var
      */
     private $request;
     /**
-     * 返回封装实例.
+     * response instance reference.
      * @var
      */
     private $response;
     /**
-     * 程序入口实例.
+     * application instance reference.
      * @var
      */
     private $app;
     /**
-     * 中间件队列.
+     * middleWare stack.
+     * @var array
      */
     private $middleWares;
     /**
-     * 路由中间件队列.
-     * @var
+     * router middleWare stack.
+     * @var array
      */
     private $routerMiddleWares;
-
-
-    private static $instance;
-
-    public static function getInstance()
-    {
-        if (empty(self::$instance)) {
-            self::$instance = new Connect();
-        }
-        return self::$instance;
-    }
 
     /**
      * Connect constructor.
      * @param $res
      * @param $req
-     * @param $app 入口类实例
+     * @param $app
      */
-    public function init($res, $req, $app)
+    public function __construct($res, $req, $app)
     {
         $this->middleWares = array();
         $this->routerMiddleWares = array();
@@ -66,28 +57,6 @@ final class Connect
         $this->request = $res;
         $this->response = $req;
         $this->app = $app;
-
-        return $this;
-    }
-
-    /**
-     * run init middleware
-     * @param $middleware
-     */
-    public function link($middleware)
-    {
-        if (!empty($middleware)) {
-            if (!is_array($middleware)) {
-                $middleware = array($middleware);
-            }
-            foreach ($middleware as $m) {
-                array_push($this->middleWares, $m);
-                $m->run(
-                    $this->request,
-                    $this->response
-                );
-            }
-        }
     }
 
     /**
@@ -95,32 +64,35 @@ final class Connect
      * @param $filter
      * @param $object router ClassName or Instance.
      */
-    public function on($filter, $object)
+    public function on(...$args)
     {
-//        echo 'Connect.on ' . $filter . ' ' . (is_string($object) ? $object : get_class($object)) . '<br><br>';
-        if (empty($filter) || empty($object)) {
-            return;
-        }
-        if (is_string($object)) {
-            //router className push.
-            array_push($this->routerMiddleWares, array(
-                $filter => $object
-            ));
-        } else {
-            //router instance set.
-            foreach ($this->routerMiddleWares as $key => $middleware) {
-                if (!empty($middleware[$filter])) {
-                    $this->routerMiddleWares[$key][$filter] = $object;
-//                    echo 'run ' . get_class($object) . '<br><br>';
-                    $object->run($this->request, $this->response, $this);
-                    return;
+        //(args length == 1 && is_array) = MiddleWare List
+        //(args length == 1 && !is_array) = MiddleWare Instance
+        //(args length == 2) == RouterMiddleWare function
+        switch (count($args)) {
+            case 1:
+                $list = is_array($args[0]) ? $args[0] : [$args[0]];
+                foreach ($list as $m) {
+                    array_push($this->middleWares, $m);
+                    $m->run($this->request, $this->response);
                 }
-            }
+                break;
+            case 2:
+                if (empty($args[0])) {
+                    $args[0] = '/';
+                } else if (substr($args[0], 0, 1) != '/') {
+                    throw new \Exception('middleWare filter error');
+                }
+                array_push($this->routerMiddleWares, ['filter' => strtolower($args[0]), 'middleWare' => $args[1]]);
+                break;
+            default:
+                throw new \Exception('middleWare append error');
+                break;
         }
     }
 
     /**
-     * 重置队列.
+     * reset the routerMiddleWare stack.
      */
     public function restart()
     {
@@ -129,7 +101,7 @@ final class Connect
     }
 
     /**
-     * 开始执行.
+     * run the current routerMiddleWare.
      */
     public function next()
     {
@@ -137,7 +109,6 @@ final class Connect
 
         //end check or 404.
         if (empty($middleWare)) {
-//            echo 'Connect.next end<br>';
             $this->app->onCatch404();
             return;
         }
@@ -145,23 +116,18 @@ final class Connect
         next($this->routerMiddleWares);
 
         //router middleware.
-        foreach ($middleWare as $filter => $object) {
-            if ($this->routerMatch($filter)) {
-                if (is_string($object)) {
-//                    echo 'filter: ' . $filter . ' load ' . $object . '<br><br>';
-                    $this->app->load($object);
-                } else {
-//                    echo 'run ' . get_class($object) . '<br><br>';
-                    $object->run($this->request, $this->response, $this);
-                }
-            } else {
-                $this->next();
-            }
+        $filter = $middleWare['filter'];
+        $instance = $middleWare['middleWare'];
+        if ($this->routerMatch($filter)) {
+            $instance($this->request, $this->response, $this);
+        } else {
+            $this->next();
         }
+
     }
 
     /**
-     * 垃圾回收所有MiddleWare & RouterMiddleWare.
+     * remove all middleWare & routerMiddleWare.
      */
     public function gc()
     {
@@ -170,18 +136,41 @@ final class Connect
             unset($this->middleWares[$key1]);
         }
         foreach ($this->routerMiddleWares as $key2 => $routerMiddleWare) {
-            foreach ($routerMiddleWare as $instance) if (!is_string($instance)) $instance->end();
             unset($this->routerMiddleWares[$key2]);
         }
     }
 
     /**
-     * 匹配filter router string 和 router-path.
+     * filter router string & router-path.
      */
     private function routerMatch($filter)
     {
         $path = $this->request->path;
-        $path = substr($path, 0, 1) == '/' ? $path : '/' . $path;
-        return strstr($path, $filter);
+
+        /**
+         * $path = '/dir/name';
+         * $filter = '/dir';
+         * $filter = '/dir/:name';
+         * $path contains $filter
+         */
+        if (strpos($path, $filter) === 0) {
+            return true;
+        } else if (strstr($filter, ':') == true) {
+            //get the params from the path.
+            if (strpos($path, explode(':', $filter)[0]) === 0) {
+                $path_stack = explode('/', $path);
+                $filter_stack = explode('/', $filter);
+                $params = [];
+                foreach ($filter_stack as $key => $value) {
+                    if (strstr($value, ':')) {
+                        $params[explode(':', $value)[1]] = $path_stack[$key];
+                    }
+                }
+                Application::getInstance()->request->params = $params;
+                return true;
+            }
+        } else {
+            return false;
+        }
     }
 }

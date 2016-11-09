@@ -9,8 +9,7 @@
 namespace model;
 
 use com\cube\db\DB;
-use com\cube\framework\Proxy;
-use config\Config;
+use com\cube\core\Proxy;
 
 /**
  * Class MysqlProxy.

@@ -9,6 +9,7 @@
 namespace com\cube\view;
 
 use com\cube\core\Application;
+use com\cube\core\Config;
 use com\cube\fs\FS;
 
 /**
@@ -47,6 +48,6 @@ class ViewEngine
      */
     final protected function getViewPagePath($name)
     {
-        return Application::$view_dir . $name . ".html";
+        return Config::$VALUE['VIEW'] . $name . ".html";
     }
 }
