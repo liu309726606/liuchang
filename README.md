@@ -39,7 +39,7 @@ $router.on('/http',function($req,$res,$connect){
     $connect->next();
 }
 ```
-* Formal router pathinfo, change the nginx.conf
+* Standard router pathinfo, change the nginx.conf
 ```javascript
 location / {
     if (!-e $request_filename) {
