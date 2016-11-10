@@ -32,13 +32,14 @@ otherwise the network address is used directly to resolve the path.
 ```javascript
 ./www.php?router=http (Cube Framework Application will find the router config from the package.json)
 
+//application filter the pathinfo.
 $router= Application::Router();
 $router.on('/http',function($req,$res,$connect){
     $res->send('get');
     $connect->next();
 }
 ```
-* Webserver router,change the nginx.conf
+* Formal router pathinfo, change the nginx.conf
 ```javascript
 location / {
     if (!-e $request_filename) {
