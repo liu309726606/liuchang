@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8d7beb79-3c1f-458c-9b12-407c7a75010b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/core/Request.php" afterPath="$PROJECT_DIR$/com/cube/core/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/cube/middleware/Connect.php" afterPath="$PROJECT_DIR$/com/cube/middleware/Connect.php" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,21 +26,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="MiddleWare.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/cube/middleware/MiddleWare.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nginx.conf" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/etc/nginx/nginx.conf">
+      <file leaf-file-name="Connect.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com/cube/middleware/Connect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="63" selection-end-column="13" />
+            <state relative-caret-position="282">
+              <caret line="150" column="11" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Request.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/cube/core/Request.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1088">
+              <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -93,17 +104,17 @@
         <option value="$PROJECT_DIR$/com/cube/core/Proxy.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/modules/session/Session.php" />
-        <option value="$PROJECT_DIR$/com/cube/middleware/Connect.php" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/modules/session/README.txt" />
         <option value="$PROJECT_DIR$/com/cube/db/DB.php" />
         <option value="$PROJECT_DIR$/model/MysqlProxy.php" />
-        <option value="$PROJECT_DIR$/com/cube/core/Request.php" />
         <option value="$PROJECT_DIR$/app.php" />
         <option value="$PROJECT_DIR$/com/cube/core/Response.php" />
         <option value="$PROJECT_DIR$/log/cube.log" />
         <option value="$PROJECT_DIR$/log/cube.mysql" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/com/cube/core/Request.php" />
+        <option value="$PROJECT_DIR$/com/cube/middleware/Connect.php" />
       </list>
     </option>
   </component>
@@ -160,6 +171,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="php-mvc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-mvc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cube" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-mvc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cube" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="middleware" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -239,12 +290,12 @@
       <workItem from="1478570395121" duration="15465000" />
       <workItem from="1478655337275" duration="17116000" />
       <workItem from="1478742927689" duration="6517000" />
-      <workItem from="1478763124444" duration="1369000" />
+      <workItem from="1478763124444" duration="1597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46554000" />
+    <option name="totallyTimeSpent" value="46782000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -289,13 +340,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/com/cube/core/IBody.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/engine/RaintplEngine.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -461,14 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/cube/middleware/Connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="161" column="53" selection-start-line="161" selection-start-column="53" selection-end-line="161" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/upload_test_0.html" />
     <entry file="file://$PROJECT_DIR$/router/RedisSessionRouter.php" />
     <entry file="file://$PROJECT_DIR$/router/ViewEngineRouter.php" />
@@ -503,14 +539,6 @@
             <marker date="1478762249000" expanded="true" signature="11524:11536" ph="DELETE FROM " />
             <marker date="1478762249000" expanded="true" signature="12183:12195" ph="INSERT INTO ${$this-&gt;_table_name}... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/cube/core/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -573,6 +601,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/cube/middleware/MiddleWare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/cube/core/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1088">
+          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/cube/middleware/Connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="150" column="11" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="11" />
           <folding />
         </state>
       </provider>

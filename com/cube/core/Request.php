@@ -66,6 +66,12 @@ final class Request
      * @var
      */
     public $params;
+    /**
+     * current router filter string.
+     * such as /download in code $router->on('/download',function($req,$res,$connect){};
+     * @var
+     */
+    public $route;
 
     /**
      * Request constructor.

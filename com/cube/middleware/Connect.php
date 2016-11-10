@@ -7,6 +7,7 @@
  */
 
 namespace com\cube\middleware;
+
 use com\cube\core\Application;
 
 
@@ -167,6 +168,7 @@ final class Connect
                     }
                 }
                 Application::getInstance()->request->params = $params;
+                Application::getInstance()->request->route = $filter;
                 return true;
             }
         } else {
