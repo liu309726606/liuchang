@@ -31,6 +31,12 @@ otherwise the network address is used directly to resolve the path.
 * Virtual router pathinfo
 ```javascript
 ./www.php?router=http (Cube Framework Application will find the router config from the package.json)
+
+$router= Application::Router();
+$router.on('/http',function($req,$res,$connect){
+    $res->send('get');
+    $connect->next();
+}
 ```
 * Webserver router,change the nginx.conf
 ```javascript
