@@ -124,3 +124,97 @@
 #6 /Users/linyang/github/php-mvc/com/cube/core/Application.php(174): com\cube\middleware\Connect->restart()
 #7 /Users/linyang/github/php-mvc/www.php(37): com\cube\core\Application->startup()
 #8 {main}	
+[2016-11-10 10:04:40] true	
+[2016-11-10 10:06:11] SELECT * FROM t_user WHERE createTime>=1462032000 AND createTime<1922630400; => numbers 0 task: false	
+[2016-11-10 10:10:16] SELECT * FROM t_user WHERE regtime>="2016-5-1"" AND regtime<"2016-31-1""; => numbers 0 task: false	
+[2016-11-10 10:10:25] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1"" AND regtime<"2016-31-1""; => numbers 0 task: false	
+[2016-11-10 10:11:39] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; => numbers 1 task: false	
+[2016-11-10 10:13:59] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; => numbers 1 task: false	
+[2016-11-10 10:17:25] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; task: false	
+[2016-11-10 10:17:25] => Error 0	
+[2016-11-10 10:19:58] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; => numbers 1 task: false	
+[2016-11-10 10:38:26] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; STATE	
+[2016-11-10 10:39:07] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; STATE	
+[2016-11-10 10:43:10] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; task: false	
+[2016-11-10 10:46:50] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; STAT task: false	
+[2016-11-10 10:49:59] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; STAT task: false	
+[2016-11-10 10:51:18] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-6-1" AND regtime<"2016-30-1"; STAT task: false	
+[2016-11-10 10:51:25] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-7-1" AND regtime<"2016-31-1"; STAT task: false	
+[2016-11-10 10:53:40] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-31-1"; STAT task: false	
+[2016-11-10 10:53:40] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-6-1" AND regtime<"2016-30-1"; STAT task: false	
+[2016-11-10 10:53:40] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-7-1" AND regtime<"2016-31-1"; STAT task: false	
+[2016-11-10 10:53:40] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-8-1" AND regtime<"2016-31-1"; STAT task: false	
+[2016-11-10 10:53:40] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-9-1" AND regtime<"2016-30-1"; STAT task: false	
+[2016-11-10 10:53:40] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-10-1" AND regtime<"2016-31-1"; STAT task: false	
+[2016-11-10 10:57:29] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-5-1" AND regtime<"2016-5-31"; STAT task: false	
+[2016-11-10 10:57:29] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-6-1" AND regtime<"2016-6-30"; STAT task: false	
+[2016-11-10 10:57:29] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-7-1" AND regtime<"2016-7-31"; STAT task: false	
+[2016-11-10 10:57:29] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-8-1" AND regtime<"2016-8-31"; STAT task: false	
+[2016-11-10 10:57:29] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-9-1" AND regtime<"2016-9-30"; STAT task: false	
+[2016-11-10 10:57:29] SELECT COUNT(*) FROM t_user WHERE regtime>="2016-10-1" AND regtime<"2016-10-31"; STAT task: false	
+[2016-11-10 11:02:36] SELECT COUNT(*) FROM t_user WHERE regtime<"2016-5-31"; STAT task: false	
+[2016-11-10 11:02:36] SELECT COUNT(*) FROM t_user WHERE regtime<"2016-6-30"; STAT task: false	
+[2016-11-10 11:02:36] SELECT COUNT(*) FROM t_user WHERE regtime<"2016-7-31"; STAT task: false	
+[2016-11-10 11:02:36] SELECT COUNT(*) FROM t_user WHERE regtime<"2016-8-31"; STAT task: false	
+[2016-11-10 11:02:36] SELECT COUNT(*) FROM t_user WHERE regtime<"2016-9-30"; STAT task: false	
+[2016-11-10 11:02:36] SELECT COUNT(*) FROM t_user WHERE regtime<"2016-10-31"; STAT task: false	
+[2016-11-10 14:07:00] Error #0 /Users/linyang/github/php-mvc/com/cube/db/DB.php(83): PDO->__construct('mysql:host=weix...', 'linyang', 'xyq2525307')
+#1 /Users/linyang/github/php-mvc/model/MysqlProxy.php(43): com\cube\db\DB::model('user')
+#2 /Users/linyang/github/php-mvc/com/cube/core/Proxy.php(64): model\MysqlProxy->execute('getUserCount')
+#3 /Users/linyang/github/php-mvc/app.php(69): com\cube\core\Model::get('mysql', 'getUserCount')
+#4 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(122): com\cube\core\Config::{closure}(Object(com\cube\core\Request), Object(com\cube\core\Response), Object(com\cube\middleware\Connect))
+#5 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#6 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#7 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#8 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#9 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#10 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#11 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#12 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#13 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#14 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(100): com\cube\middleware\Connect->next()
+#15 /Users/linyang/github/php-mvc/com/cube/core/Application.php(174): com\cube\middleware\Connect->restart()
+#16 /Users/linyang/github/php-mvc/www.php(37): com\cube\core\Application->startup()
+#17 {main}	
+[2016-11-10 14:12:03] Error #0 /Users/linyang/github/php-mvc/com/cube/db/DB.php(83): PDO->__construct('mysql:host=weix...', 'linyang', 'xyq2525307')
+#1 /Users/linyang/github/php-mvc/model/MysqlProxy.php(43): com\cube\db\DB::model('user')
+#2 /Users/linyang/github/php-mvc/com/cube/core/Proxy.php(64): model\MysqlProxy->execute('getUserCount')
+#3 /Users/linyang/github/php-mvc/app.php(69): com\cube\core\Model::get('mysql', 'getUserCount')
+#4 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(122): com\cube\core\Config::{closure}(Object(com\cube\core\Request), Object(com\cube\core\Response), Object(com\cube\middleware\Connect))
+#5 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#6 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#7 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#8 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#9 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#10 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#11 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#12 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#13 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#14 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(100): com\cube\middleware\Connect->next()
+#15 /Users/linyang/github/php-mvc/com/cube/core/Application.php(174): com\cube\middleware\Connect->restart()
+#16 /Users/linyang/github/php-mvc/www.php(37): com\cube\core\Application->startup()
+#17 {main}	
+[2016-11-10 14:12:48] Error #0 /Users/linyang/github/php-mvc/com/cube/db/DB.php(83): PDO->__construct('mysql:host=weix...', 'linyang', 'xyq2525307')
+#1 /Users/linyang/github/php-mvc/model/MysqlProxy.php(43): com\cube\db\DB::model('user')
+#2 /Users/linyang/github/php-mvc/com/cube/core/Proxy.php(64): model\MysqlProxy->execute('getUserCount')
+#3 /Users/linyang/github/php-mvc/app.php(69): com\cube\core\Model::get('mysql', 'getUserCount')
+#4 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(122): com\cube\core\Config::{closure}(Object(com\cube\core\Request), Object(com\cube\core\Response), Object(com\cube\middleware\Connect))
+#5 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#6 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#7 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#8 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#9 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#10 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#11 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#12 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#13 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(124): com\cube\middleware\Connect->next()
+#14 /Users/linyang/github/php-mvc/com/cube/middleware/Connect.php(100): com\cube\middleware\Connect->next()
+#15 /Users/linyang/github/php-mvc/com/cube/core/Application.php(174): com\cube\middleware\Connect->restart()
+#16 /Users/linyang/github/php-mvc/www.php(37): com\cube\core\Application->startup()
+#17 {main}	
+[2016-11-10 14:13:04] SELECT SUM(phone) FROM ceshi_user; STAT task: false	
+[2016-11-10 14:13:29] SELECT SUM(phone) FROM ceshi_user; STAT task: false	
+[2016-11-10 14:15:04] SELECT SUM(phone) FROM ceshi_user; STAT task: false	
+[2016-11-10 14:15:53] SELECT SUM(phone) FROM ceshi_user; STAT task: false	
+[2016-11-10 14:16:21] SELECT * FROM ceshi_user; task: false	
+[2016-11-10 14:17:49] SELECT * FROM ceshi_user; task: false	

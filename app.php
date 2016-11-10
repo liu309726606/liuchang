@@ -65,5 +65,7 @@ $router->on('/viewengine', function (Request $req, Response $res, Connect $conne
 });
 
 $router->on('/', function (Request $req, Response $res, Connect $connect) {
-    $res->send('router end');
+
+    $content = Model::get('mysql','getUserCount');
+    $res->json($content);
 });

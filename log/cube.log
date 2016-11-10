@@ -196,3 +196,57 @@
 [2016-11-09 19:15:54] Response json (7ms)	
 [2016-11-09 19:19:43] http://localhost:63342/php-mvc/www.php?_ijt=1c7577egt54elq8b3o1cfbb2ou	
 [2016-11-09 19:19:43] Response send (16ms)	
+[2016-11-10 10:04:40] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:04:40] Response send (282ms)	
+[2016-11-10 10:06:11] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:06:11] Response send (661ms)	
+[2016-11-10 10:10:13] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:10:16] Response send (2847ms)	
+[2016-11-10 10:10:25] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:10:25] Response send (200ms)	
+[2016-11-10 10:11:39] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:11:39] Response send (663ms)	
+[2016-11-10 10:13:54] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:13:59] Response send (4931ms)	
+[2016-11-10 10:17:24] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:17:25] Response send (215ms)	
+[2016-11-10 10:19:57] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:19:58] Response send (651ms)	
+[2016-11-10 10:38:26] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:38:26] Response send (605ms)	
+[2016-11-10 10:39:06] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:39:07] Response send (191ms)	
+[2016-11-10 10:43:09] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:43:10] Response send (1250ms)	
+[2016-11-10 10:46:49] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:46:50] Response send (665ms)	
+[2016-11-10 10:49:59] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:50:00] Response send (422ms)	
+[2016-11-10 10:51:18] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:51:18] Response send (651ms)	
+[2016-11-10 10:51:24] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:51:25] Response send (202ms)	
+[2016-11-10 10:53:38] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:53:40] Response json (2083ms)	
+[2016-11-10 10:57:28] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 10:57:29] Response json (925ms)	
+[2016-11-10 11:02:35] http://localhost:63342/php-mvc/www.php?_ijt=l0oac2cq9f4lcf3ghke1jokdvd	
+[2016-11-10 11:02:36] Response json (1697ms)	
+[2016-11-10 14:07:00] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:07:00] Response json (559ms)	
+[2016-11-10 14:12:02] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:12:03] Response json (922ms)	
+[2016-11-10 14:12:48] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:12:48] Response json (534ms)	
+[2016-11-10 14:13:03] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:13:04] Response json (506ms)	
+[2016-11-10 14:13:29] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:13:29] Response json (584ms)	
+[2016-11-10 14:15:04] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:15:04] Response json (539ms)	
+[2016-11-10 14:15:52] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:15:53] Response json (543ms)	
+[2016-11-10 14:16:20] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:16:21] Response json (578ms)	
+[2016-11-10 14:17:48] http://localhost:63342/php-mvc/www.php?_ijt=702kg1fsreqb3k1pujtgq1a90a	
+[2016-11-10 14:17:49] Response json (989ms)	

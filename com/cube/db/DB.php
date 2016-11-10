@@ -104,23 +104,18 @@ final class DB
             try {
                 Log::mysql($sql . ' task: ' . ($task ? 'true' : 'false'));
                 if ($task == true) {
-                    self::$pdo->query('SET AUTOCOMMIT=0');
-                    self::$pdo->query('BEGIN');
+                    self::$pdo->beginTransaction();
                 }
-
-                $lineNum = self::$pdo->exec($sql);
-
-                if ($lineNum === false) {
-                    if ($task == true) self::$pdo->query('ROLLBACK');
-                    return -1;
+                $result = self::$pdo->exec($sql);
+                if ($result !== false) {
+                    if ($task == true) self::$pdo->commit();
                 } else {
-                    if ($task == true) self::$pdo->query('COMMIT');
+                    if ($task == true) self::$pdo->rollBack();
+                    return -1;
                 }
-                Log::mysql('=> Error ' . $lineNum);
-                return $lineNum;
+                return $result;
             } catch (\PDOException $e) {
                 Log::mysql('=> Error ' . $e->getTraceAsString());
-                return -1;
             }
         }
         return -1;
@@ -138,26 +133,48 @@ final class DB
     {
         if (!empty(self::$pdo)) {
             try {
+                Log::mysql($sql . ' task: ' . ($task ? 'true' : 'false'));
                 if ($task == true) {
-                    self::$pdo->query('SET AUTOCOMMIT=0');
-                    self::$pdo->query('BEGIN');
+                    self::$pdo->beginTransaction();
                 }
-
-                $result = self::$pdo->prepare($sql);
-                $result->execute();
-                $arr = $result->fetchAll(\PDO::FETCH_ASSOC);
-
-                if ($arr) {
-                    if ($task == true) self::$pdo->query('COMMIT');
+                $stat = self::$pdo->query($sql);
+                $result = $stat->fetchAll(\PDO::FETCH_ASSOC);
+                if ($result !== false) {
+                    if ($task == true) self::$pdo->commit();
                 } else {
-                    if ($task == true) self::$pdo->query('ROLLBACK');
+                    if ($task == true) self::$pdo->rollBack();
                 }
-
-                Log::mysql($sql . ' => numbers ' . count($arr) . ' task: ' . $task ? 'true' : 'false');
-                return $arr;
+                return $result;
             } catch (\PDOException $e) {
                 Log::mysql($sql . ' => Error ' . $e->getTraceAsString());
-                return null;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Get PDO Statement.
+     * @param $sql
+     * @return null
+     */
+    public static function value($sql, $task)
+    {
+        if (!empty(self::$pdo)) {
+            try {
+                Log::mysql($sql . ' STAT task: ' . ($task ? 'true' : 'false'));
+                if ($task == true) {
+                    self::$pdo->beginTransaction();
+                }
+                $stat = self::$pdo->query($sql);
+                $result = $stat->fetchColumn();
+                if ($result !== false) {
+                    if ($task == true) self::$pdo->commit();
+                } else {
+                    if ($task == true) self::$pdo->rollBack();
+                }
+                return $result;
+            } catch (\PDOException $e) {
+                Log::mysql($sql . ' => Error ' . $e->getTraceAsString());
             }
         }
         return null;
@@ -337,7 +354,7 @@ class DBModel
             $sql .= ' WHERE ' . $this->_where;
         }
         $sql .= ';';
-        return DB::query($sql, $this->_task);
+        return DB::value($sql, $this->_task);
     }
 
     /**
@@ -363,7 +380,7 @@ class DBModel
             $sql .= ' WHERE ' . $this->_where;
         }
         $sql .= ';';
-        return DB::query($sql, $this->_task);
+        return DB::value($sql, $this->_task);
     }
 
     /**

@@ -27,7 +27,7 @@ class MysqlProxy extends Proxy
             'user' => 'root',
             'password' => '',
             'db' => 'system',
-            'prefix' => 'cube_'
+            'prefix' => ''
         ]);
     }
 
@@ -38,12 +38,10 @@ class MysqlProxy extends Proxy
 
     public function execute($value)
     {
-        //get remote or local data.
-//        return DB::model('user')->where('username="linyang"')->delete();
-        return DB::model('user')->where('username="lin"')->select();
-        //return DB::model('user')->where('username="lin"')->update(array('phone' => 555));
-//        return DB::model('user')->insert(array('username' => '"dabao"','phone'=>159));
-//        return DB::model('user')->where('phone=159')->insert(array('username' => '"yangzhuo"'));
+        switch ($value) {
+            case 'getUserCount':
+                return DB::model('user')->select();
+        }
     }
 
     public function onRemove()
