@@ -60,12 +60,16 @@ $router->on('/upload', function (Request $req, Response $res, Connect $connect) 
     }
 });
 
+$router->on('/download', function (Request $req, Response $res, Connect $connect) {
+    $res->download('./README.md');
+});
+
 $router->on('/viewengine', function (Request $req, Response $res, Connect $connect) {
     $res->render(new \modules\engine\RaintplEngine(), 'page', array('title' => 'cube'));
 });
 
 $router->on('/', function (Request $req, Response $res, Connect $connect) {
 
-    $content = Model::get('mysql','getUserCount');
+    $content = Model::get('mysql', 'getUserCount');
     $res->json($content);
 });

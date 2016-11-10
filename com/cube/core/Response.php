@@ -8,6 +8,7 @@
 
 namespace com\cube\core;
 
+use com\cube\fs\FS;
 use com\cube\log\Log;
 use com\cube\view\ViewEngine;
 
@@ -34,6 +35,19 @@ final class Response
         } catch (\Exception $e) {
         }
         return $this;
+    }
+
+    /**
+     * file download.
+     * @param $path
+     */
+    public function download($path)
+    {
+        header("Content-type: application/force-download");
+        header("Content-Disposition: attachment; filename=" . pathinfo($path)['basename']);
+        echo FS::read($path);
+
+        Log::log('Response download', true);
     }
 
     /**
@@ -64,7 +78,7 @@ final class Response
      */
     public function jsonp($value)
     {
-        $callback_str = Config::get('core','jsonp');
+        $callback_str = Config::get('core', 'jsonp');
         if (empty($callback_str)) {
             return $this;
         }

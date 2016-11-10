@@ -25,7 +25,36 @@
 *  model - proxy loaded(not instantiation)
 
 ### ./www.php (the facade file of the Application)
-* Virtual Router Path Demo: ./www.php?router=http (Cube Framework Application will find the router config from the package.json)
+Once the route configuration is included in the project configuration file,
+it will automatically give priority to the path analysis of the virtual router,
+otherwise the network address is used directly to resolve the path.
+* Virtual router pathinfo
+```javascript
+./www.php?router=http (Cube Framework Application will find the router config from the package.json)
+```
+* Webserver router,change the nginx.conf
+```javascript
+location / {
+    if (!-e $request_filename) {
+        rewrite  ^/(.*)$  /index.php/$1  last;
+        break;
+    }
+}
+
+location ~ \.php {
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi_params;
+    set $real_script_name $fastcgi_script_name;
+        if ($fastcgi_script_name ~ "^(.+?\.php)(/.+)$") {
+        set $real_script_name $1;
+        set $path_info $2;
+    }
+    fastcgi_param SCRIPT_FILENAME $document_root$real_script_name;
+    fastcgi_param SCRIPT_NAME $real_script_name;
+    fastcgi_param PATH_INFO $path_info;
+}
+```
 
 ### fast and simple!
 * You do not need to write code in the import file, simply by modifying the configuration file and the logic code to complete what you want!
